@@ -44,6 +44,10 @@ ChiptuneJsPlayer.prototype.duration = function() {
   return Module._openmpt_module_get_duration_seconds(this.currentPlayingNode.modulePtr);
 }
 
+ChiptuneJsPlayer.prototype.get_position_seconds = function() {
+  return Module._openmpt_module_get_position_seconds(this.currentPlayingNode.modulePtr);
+}
+
 ChiptuneJsPlayer.prototype.metadata = function() {
   var data = {};
   var keys = Module.Pointer_stringify(Module._openmpt_module_get_metadata_keys(this.currentPlayingNode.modulePtr)).split(';');
